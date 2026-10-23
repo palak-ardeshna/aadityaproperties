@@ -102,7 +102,7 @@ h1,h2,h3,.headline,.wordmark{font-family:var(--serif);font-weight:600;letter-spa
 .article-header h1{font-size:var(--step-4);line-height:1.12;margin:.25rem 0 .75rem}
 .article-header .dek{font-size:var(--step-1);line-height:1.5;margin-bottom:1rem}
 .hero{margin:1.5rem 0}.hero figcaption{font-size:var(--step--1);color:var(--muted);margin-top:.4rem}
-.prose{font-size:1.0625rem}
+.prose{font-size:1.0625rem;overflow-wrap:break-word}
 .prose h2{font-size:var(--step-2);line-height:1.25;margin:2.25rem 0 .75rem}
 .prose h3{font-size:var(--step-1);margin:1.75rem 0 .5rem}
 .prose p,.prose ul,.prose ol{margin:0 0 1.1rem}
