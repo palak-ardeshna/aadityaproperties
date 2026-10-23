@@ -1,0 +1,17 @@
+# Stop LiteSpeed serving pages cached by the old WordPress LSCache plugin.
+<IfModule LiteSpeed>
+CacheLookup off
+</IfModule>
+
+RewriteEngine On
+# Old WordPress URLs -> new pages
+RewriteRule ^about-us/?$ /about/ [R=301,L]
+RewriteRule ^contact-us(-2)?/?$ /contact/ [R=301,L]
+RewriteRule ^blogs/?$ /guides/ [R=301,L]
+RewriteRule ^category/real-estate/?$ /guides/ [R=301,L]
+# Old demo listings, listing views, accounts and taxonomies: gone for good
+RewriteRule ^(property|property-category|property-type|property-state|property-city|location|rent-period|es_[a-z_]+|parking|roof|exterior-material|floor-covering|author)/ - [G,L]
+RewriteRule ^(list-layout|grid-layout|map-view|search-results|sign-up|log-in|reset-password|profile)/?$ - [G,L]
+RewriteRule ^(wp-sitemap.*\.xml|feed/?|comments/feed/?|xmlrpc\.php|wp-login\.php|wp-admin.*)$ - [G,L]
+
+ErrorDocument 404 /404.html
