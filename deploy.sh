@@ -45,7 +45,9 @@ if [ -f wp-config.php ]; then
   echo "     WordPress moved to \$BK (outside public_html, not public)"
 fi
 EOF
-rsync -az --delete -e "${SSH[*]}" "$OUT"/ "$SSH_USER@$HOST:$REMOTE_DIR/"
+# --chmod: mktemp dirs are 700; without this public_html becomes unreadable (403/404).
+rsync -rlz --delete --chmod=D755,F644 -e "${SSH[*]}" "$OUT"/ "$SSH_USER@$HOST:$REMOTE_DIR/"
+"${SSH[@]}" "$SSH_USER@$HOST" "chmod 755 ~/$REMOTE_DIR"
 
 echo "4/4  Checking the live site..."
 fail=0
