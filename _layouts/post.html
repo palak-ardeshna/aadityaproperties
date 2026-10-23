@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<nav class="crumbs" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> › <a href="{{ '/guides/' | relative_url }}">Guides</a> › {{ page.category }}</nav>
+<article class="post">
+  <h1>{{ page.title }}</h1>
+  <p class="byline">By <a href="{{ '/about/' | relative_url }}">{{ page.author }}</a> ·
+    Published <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %b %Y" }}</time>
+    {% if page.last_modified_at %} · Last updated <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%-d %b %Y" }}</time>{% endif %}
+    · Jurisdiction: {{ page.jurisdiction }}</p>
+  {% if page.summary %}<p class="answer"><strong>Short answer:</strong> {{ page.summary }}</p>{% endif %}
+  {{ content }}
+  <aside class="disclaimer">This article is general educational information about {{ page.jurisdiction }} as of {{ page.date | date: "%B %Y" }}. It is not legal, tax or investment advice. Rules and portals change; confirm with the official source or a qualified professional before acting. Spotted an error? <a href="{{ '/corrections/' | relative_url }}">Tell us</a>.</aside>
+</article>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Home","item":"{{ '/' | absolute_url }}"},
+{"@type":"ListItem","position":2,"name":"Guides","item":"{{ '/guides/' | absolute_url }}"},
+{"@type":"ListItem","position":3,"name":{{ page.title | jsonify }}}]}
+</script>

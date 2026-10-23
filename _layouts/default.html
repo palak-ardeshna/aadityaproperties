@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+{% if site.adsense_client and page.ads != false %}<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>{% endif %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">Aaditya Properties</a>
+    <nav aria-label="Main">
+      <a href="{{ '/guides/' | relative_url }}">Guides</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/editorial-policy/' | relative_url }}">How we work</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+{{ content }}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>Aaditya Properties</strong> — {{ site.tagline }}.</p>
+    <p class="small">General educational information only. Not legal, tax or investment advice. Always confirm with the official source or a qualified professional.</p>
+    <nav aria-label="Footer">
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a>
+      <a href="{{ '/corrections/' | relative_url }}">Corrections</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a href="{{ '/privacy-policy/' | relative_url }}">Privacy</a>
+      <a href="{{ '/terms/' | relative_url }}">Terms</a>
+      <a href="{{ '/disclaimer/' | relative_url }}">Disclaimer</a>
+      <a href="{{ '/advertising-disclosure/' | relative_url }}">Advertising</a>
+    </nav>
+    <p class="small">© {{ site.time | date: "%Y" }} Aaditya Properties</p>
+  </div>
+</footer>
+</body>
+</html>

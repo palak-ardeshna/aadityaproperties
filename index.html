@@ -1,0 +1,23 @@
+---
+title: Property in Gujarat, explained from the source
+description: Plain-English guides to buying, selling, owning and renting property in Gujarat, checked against official sources and dated.
+---
+<h1>Property in Gujarat, explained from the source</h1>
+<p>Aaditya Properties publishes practical guides for people buying, selling, owning or renting property in Gujarat. Every rule, rate and threshold we mention links to the official source and carries the date we checked it.</p>
+<p>We do not predict prices, promise returns or sell projects. Where a question needs a lawyer or a chartered accountant, we say so.</p>
+
+<h2>Latest guides</h2>
+<ul class="cards">
+{% for post in site.posts %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br><span class="small">{{ post.category }} · {{ post.date | date: "%-d %b %Y" }}</span><br>{{ post.description }}</li>
+{% endfor %}
+</ul>
+
+<h2>What we cover</h2>
+<ul>
+  <li><strong>Gujarat property procedures</strong> — land records on AnyROR, jantri and stamp duty on GARVI, project checks on GujRERA.</li>
+  <li><strong>Buying and selling</strong> — documents, costs and the order of steps.</li>
+  <li><strong>Tax and legal basics</strong> — explained from official text, with professional review where the stakes are high.</li>
+  <li><strong>Home loans</strong> — how RBI rules affect your rate, EMI and prepayment.</li>
+</ul>
+<p><a href="{{ '/editorial-policy/' | relative_url }}">How we research and check our guides →</a></p>

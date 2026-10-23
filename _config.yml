@@ -1,0 +1,32 @@
+title: Aaditya Properties
+tagline: Property in Gujarat, explained from the source
+description: Plain-English guides to buying, selling, owning and renting property in Gujarat, checked against official sources and dated.
+lang: en-IN
+timezone: Asia/Kolkata
+
+# Project site on GitHub Pages. When the custom domain is connected, set url to
+# https://aadityaproperties.in and baseurl to "".
+url: https://palak-ardeshna.github.io
+baseurl: /aadityaproperties
+
+# Fill these with real details only. Empty values are simply not shown.
+contact_email: ""
+contact_phone: ""
+operator_name: ""
+operator_city: ""
+
+# AdSense: the ID found on the old site. Confirm in the AdSense account before going live.
+adsense_client: ca-pub-6821460891701727
+
+permalink: /:title/
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, author: Aaditya Properties Editorial Desk }
+  - scope: { path: "" }
+    values: { layout: default }
+
+exclude: [README.md]
