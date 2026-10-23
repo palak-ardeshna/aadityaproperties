@@ -78,6 +78,7 @@ h1,h2,h3,.headline,.wordmark{font-family:var(--serif);font-weight:600;letter-spa
 .story .headline a:hover{text-decoration:underline}
 .story--lead .headline{font-size:var(--step-3)}
 .story--lead .dek{font-size:var(--step-1);line-height:1.5}
+.story--lead .brief{border-top:1px solid var(--rule);padding-top:1rem;margin:1.25rem 0 0;color:var(--ink-2);max-width:var(--measure)}
 .story--secondary .headline,.story--list .headline{font-size:var(--step-2)}
 .story--compact .headline{font-size:var(--step-1)}
 .story--secondary:first-child{padding-top:0}
@@ -110,7 +111,8 @@ h1,h2,h3,.headline,.wordmark{font-family:var(--serif);font-weight:600;letter-spa
 .prose th{font-weight:600;text-align:left;border-bottom:1px solid var(--rule-strong)}
 .prose th,.prose td{padding:.55rem .75rem .55rem 0;vertical-align:top;border-bottom:1px solid var(--rule)}
 .prose strong{font-weight:600}
-.in-brief{border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule);padding:1rem 0;margin:1.5rem 0 1.75rem}
+.in-brief{border-bottom:1px solid var(--rule);padding:1.25rem 0;margin:0 0 1.75rem}
+.prose .in-brief h2{font:600 var(--step--1)/1.3 var(--sans);letter-spacing:.06em;text-transform:uppercase;margin:0 0 .5rem}
 .in-brief p{margin:0}
 .toc{border-left:1px solid var(--rule-strong);padding:.25rem 0 .25rem 1rem;margin:0 0 1.75rem;font-size:.9375rem}
 .toc p{margin:0 0 .4rem}.toc ul{margin:0;padding-left:1rem}
