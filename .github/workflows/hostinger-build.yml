@@ -1,0 +1,23 @@
+name: Build for Hostinger
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+      - run: gem install -N jekyll jekyll-sitemap jekyll-seo-tag
+      - run: jekyll build --config _config.yml,_config.hostinger.yml
+      # Hostinger's Git deploy pulls this branch into public_html.
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: hostinger-build
+          publish_dir: ./_site
