@@ -1,12 +1,21 @@
 ---
 title: "Documents to Check Before Buying Property in Gujarat: A Practical Checklist"
 description: What each key property document proves, where to get it in Gujarat (AnyROR, GARVI, GujRERA), and the warning signs to look for before you pay.
-category: Buying & Selling
+section: property-buying-selling
+analysis: true
+toc: true
 jurisdiction: Gujarat, India
 summary: "Before paying any token amount in Gujarat, check the land record (7/12 and 8A, or the property card in city survey areas), the chain of title deeds, an encumbrance search on GARVI, the NA order for non-agricultural use, the approved plan and BU permission for buildings, and GujRERA registration for new projects. Most records can be viewed online on official portals, but a clean online record is not proof of clear title — have an advocate do a title search."
 ---
 
 Buying property in Gujarat means checking two things: **who owns it** and **whether it can legally be used the way you intend**. The documents below answer those questions. For each one, this guide explains what it proves, where to find it, and what should make you stop and ask questions.
+
+<nav class="toc" markdown="1" aria-label="On this page">
+**On this page**
+
+* toc
+{:toc}
+</nav>
 
 ## The checklist at a glance
 

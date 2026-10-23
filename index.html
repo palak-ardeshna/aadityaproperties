@@ -1,23 +1,62 @@
 ---
-title: Property in Gujarat, explained from the source
-description: Plain-English guides to buying, selling, owning and renting property in Gujarat, checked against official sources and dated.
+layout: default
+title: Aaditya Properties
+description: Plain-English, sourced guidance for buying, owning, financing and renting property in Gujarat. Every rule linked to its official source and dated.
 ---
-<h1>Property in Gujarat, explained from the source</h1>
-<p>Aaditya Properties publishes practical guides for people buying, selling, owning or renting property in Gujarat. Every rule, rate and threshold we mention links to the official source and carries the date we checked it.</p>
-<p>We do not predict prices, promise returns or sell projects. Where a question needs a lawyer or a chartered accountant, we say so.</p>
+<div class="container">
+  <section class="intro">
+    <h1>Clear, sourced guidance for property decisions in Gujarat</h1>
+    <p>We explain the documents, costs, rules and official processes behind buying, owning, financing and renting property — with every rule linked to its source and dated, so you can check it yourself.</p>
+  </section>
 
-<h2>Latest guides</h2>
-<ul class="cards">
-{% for post in site.posts %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br><span class="small">{{ post.category }} · {{ post.date | date: "%-d %b %Y" }}</span><br>{{ post.description }}</li>
-{% endfor %}
-</ul>
+  {%- assign lead = site.posts | where_exp: "p", "p.featured == true" | first | default: site.posts.first -%}
+  {%- assign rest = site.posts | where_exp: "p", "p.url != lead.url" -%}
+  <section class="home-block" aria-labelledby="h-featured">
+    <h2 id="h-featured" class="visually-hidden">Featured</h2>
+    <div class="featured">
+      <div class="lead">{% include story.html post=lead size="lead" level=2 %}</div>
+      <div class="secondary">{% for post in rest limit:2 %}{% include story.html post=post size="secondary" %}{% endfor %}</div>
+    </div>
+  </section>
 
-<h2>What we cover</h2>
-<ul>
-  <li><strong>Gujarat property procedures</strong> — land records on AnyROR, jantri and stamp duty on GARVI, project checks on GujRERA.</li>
-  <li><strong>Buying and selling</strong> — documents, costs and the order of steps.</li>
-  <li><strong>Tax and legal basics</strong> — explained from official text, with professional review where the stakes are high.</li>
-  <li><strong>Home loans</strong> — how RBI rules affect your rate, EMI and prepayment.</li>
-</ul>
-<p><a href="{{ '/editorial-policy/' | relative_url }}">How we research and check our guides →</a></p>
+  {%- if site.posts.size > 6 %}
+  <section class="home-block" aria-labelledby="h-latest">
+    <h2 id="h-latest" class="section-title">Latest</h2>
+    <div class="story-list">{% for post in rest offset:2 limit:8 %}{% include story.html post=post size="list" %}{% endfor %}</div>
+  </section>
+  {%- endif %}
+
+  <section class="home-block" aria-labelledby="h-sections">
+    <h2 id="h-sections" class="section-title">Sections</h2>
+    <div class="sections-grid">
+    {%- for c in site.data.categories -%}
+      {%- assign posts = site.posts | where: "section", c.slug -%}
+      {%- if posts.size > 0 %}
+      <div>
+        <h3><a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a></h3>
+        <p class="muted">{{ c.description }}</p>
+        <ul>{% for post in posts limit:4 %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
+      </div>
+      {%- endif -%}
+    {%- endfor %}
+    </div>
+  </section>
+
+  {%- assign analysis = site.posts | where_exp: "p", "p.analysis == true" -%}
+  {%- if analysis.size > 0 %}
+  <section class="home-block" aria-labelledby="h-analysis">
+    <h2 id="h-analysis" class="section-title">Research &amp; analysis</h2>
+    <div class="story-list">{% for post in analysis limit:4 %}{% include story.html post=post size="list" %}{% endfor %}</div>
+  </section>
+  {%- endif %}
+
+  <section class="home-block" aria-labelledby="h-method">
+    <h2 id="h-method" class="section-title">How we work</h2>
+    <div class="method">
+      <div><h3>Sources first</h3><p>Rules and rates come from Acts, notifications and official portals such as GujRERA, GARVI, AnyROR, the Income Tax Department and RBI — linked next to each claim.</p></div>
+      <div><h3>Shown working</h3><p>Every worked example lists its assumptions, and calculations are recomputed independently before publishing.</p></div>
+      <div><h3>Dated and corrected</h3><p>Each guide states its jurisdiction and date. When rules change or we get something wrong, we update the guide and note what changed.</p></div>
+    </div>
+    <p><a href="{{ '/editorial-policy/' | relative_url }}">Read our editorial policy</a></p>
+  </section>
+</div>

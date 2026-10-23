@@ -1,0 +1,30 @@
+{%- if page.url == '/' -%}{%- assign t = site.title | append: ' — ' | append: site.tagline -%}{%- else -%}{%- assign t = page.title | append: ' | ' | append: site.title -%}{%- endif -%}
+{%- assign d = page.description | default: site.description -%}
+<title>{{ t | escape }}</title>
+<meta name="description" content="{{ d | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:description" content="{{ d | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:type" content="{% if page.collection == 'posts' %}article{% else %}website{% endif %}">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary">
+{%- if page.collection == 'posts' %}{% assign a = site.data.authors[page.author] %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting",
+ "headline":{{ page.title | jsonify }},"description":{{ d | jsonify }},
+ "mainEntityOfPage":"{{ page.url | absolute_url }}",
+ "datePublished":"{{ page.date | date_to_xmlschema }}","dateModified":"{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+ "inLanguage":"en-IN",
+ "author":[{"@type":"{{ a.type }}","name":{{ a.name | jsonify }},"url":"{{ a.url | absolute_url }}"}],
+ "publisher":{"@type":"Organization","name":"{{ site.title }}","url":"{{ '/' | absolute_url }}"}}
+</script>
+{%- elsif page.url == '/' %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","name":"{{ site.title }}","url":"{{ '/' | absolute_url }}","inLanguage":"en-IN",
+  "potentialAction":{"@type":"SearchAction","target":"{{ '/search/' | absolute_url }}?q={query}","query-input":"required name=query"}},
+ {"@type":"Organization","name":"{{ site.title }}","url":"{{ '/' | absolute_url }}"}]}
+</script>
+{%- endif %}

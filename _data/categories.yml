@@ -1,0 +1,26 @@
+# Editorial taxonomy. A section appears in navigation and gets a page only when
+# it has at least one published article (see _includes/nav-links.html).
+- slug: property-buying-selling
+  name: Property Buying & Selling
+  nav: Property Guides
+  description: Documents, costs and the order of steps for buying or selling property in Gujarat.
+- slug: market-insights
+  name: Real Estate Market Insights
+  nav: Market Insights
+  description: Explanations of published market data, with sources, periods and limitations stated.
+- slug: property-investment
+  name: Property Investment
+  nav: Investment
+  description: Risk, cost and income frameworks for property investment, with transparent calculations and no return promises.
+- slug: home-loans
+  name: Home Loans & Property Finance
+  nav: Home Loans
+  description: How RBI rules and lender terms affect your rate, EMI, down payment and prepayment.
+- slug: property-law-tax
+  name: Property Law & Tax
+  nav: Legal & Tax
+  description: Property tax and legal basics explained from official text, reviewed by qualified professionals where the stakes are high.
+- slug: homeownership-rental
+  name: Homeownership & Rental Property
+  nav: Renting
+  description: Rent agreements, landlord duties, society charges and the ongoing costs of owning property.

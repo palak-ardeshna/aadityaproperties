@@ -1,7 +1,7 @@
 ---
 title: "Property Investment for Beginners: 8 Questions to Answer Before You Buy"
 description: A beginner's checklist for property investment in India, covering goals, true costs, financing, legal checks, tax and exit, with sources and no return promises.
-category: Investment Basics
+section: property-investment
 jurisdiction: India (Gujarat examples)
 summary: "Before buying property as an investment, be clear about your goal (rental income or long-term holding), count every cost, stress-test your loan, verify the title and RERA registration, understand how rent and sale profits are taxed, and plan how you would sell. Property can be a reasonable long-term holding, but it is illiquid and concentrated, and no return is guaranteed."
 ---

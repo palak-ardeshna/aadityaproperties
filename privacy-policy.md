@@ -16,6 +16,8 @@ This website is operated by Aaditya Properties{% if site.operator_name != "" %} 
 ## Information we collect
 - **When you email us:** your email address and anything you include in your message. We use it only to reply and to correct our content, and we keep it no longer than needed.
 - **Technical data:** like most websites, our hosting provider may record standard server logs (IP address, browser type, pages requested, time) for security and operation.
+- **Fonts:** pages load typefaces from Google Fonts, so your browser connects to Google's servers, which receive your IP address. See [Google's privacy policy](https://policies.google.com/privacy).
+- **Search:** site search runs entirely in your browser; your search terms are not sent to us.
 - **Cookies and similar technologies:** used by advertising partners, as described below.
 
 We have no user accounts or comment forms, and we don't sell personal information.

@@ -1,7 +1,8 @@
 ---
 title: "Residential vs Commercial Property: How the Risks and Costs Differ"
 description: A framework for comparing residential and commercial property, covering income, vacancy, financing, management and liquidity, without unsupported return claims.
-category: Investment Basics
+section: property-investment
+analysis: true
 jurisdiction: India
 summary: "Residential and commercial property differ less in which one 'pays more' than in how their income behaves: who the tenants are, how long leases last, how long a vacancy can run, how they are financed and how easily they sell. Compare a specific property's net income after all costs, under realistic vacancy, rather than relying on general claims about yields."
 ---

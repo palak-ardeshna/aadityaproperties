@@ -1,0 +1,15 @@
+# Real people only. Add an entry per author/reviewer with verifiable details;
+# never invent names, photos or credentials. Template:
+# firstname-lastname:
+#   name: Full Name
+#   type: Person
+#   role: Writer / Reviewer (e.g. Chartered Accountant)
+#   credentials: e.g. "ICAI membership no. 123456" (only if public and true)
+#   url: /authors/firstname-lastname/
+#   same_as: [https://www.linkedin.com/in/...]
+#   bio: One or two factual sentences.
+editorial-desk:
+  name: Aaditya Properties Editorial Desk
+  type: Organization
+  url: /about/#who-writes-the-guides
+  bio: Guides are researched and written by the Aaditya Properties editorial desk and checked by an editor before publishing.

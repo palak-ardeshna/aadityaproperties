@@ -1,0 +1,21 @@
+---
+layout: default
+title: Search
+description: Search Aaditya Properties guides.
+permalink: /search/
+ads: false
+sitemap: false
+---
+<div class="container search-page">
+  <header class="section-header">
+    <h1>Search</h1>
+    <form class="search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+      <label for="q" class="visually-hidden">Search articles</label>
+      <input id="q" name="q" type="search" placeholder="e.g. stamp duty, 7/12, TDS">
+      <button type="submit">Search</button>
+    </form>
+  </header>
+  <p id="search-status" class="muted" aria-live="polite"><noscript>Search needs JavaScript. Browse <a href="{{ '/guides/' | relative_url }}">all articles</a> instead.</noscript></p>
+  <div id="search-results" class="story-list"></div>
+</div>
+<script src="{{ '/assets/search.js' | relative_url }}" data-index="{{ '/search.json' | relative_url }}" defer></script>

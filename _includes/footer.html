@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="wordmark wordmark--small">Aaditya Properties</p>
+      <p class="muted">{{ site.description }}</p>
+    </div>
+    <nav aria-label="Sections (footer)"><h2 class="label">Sections</h2><ul>
+      {%- for c in site.data.categories -%}{%- assign n = site.posts | where: "section", c.slug | size -%}
+      {%- if n > 0 %}<li><a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a></li>{% endif -%}
+      {%- endfor %}
+      <li><a href="{{ '/guides/' | relative_url }}">All articles</a></li></ul></nav>
+    <nav aria-label="About"><h2 class="label">About</h2><ul>
+      <li><a href="{{ '/about/' | relative_url }}">About us</a></li>
+      <li><a href="{{ '/editorial-policy/' | relative_url }}">Editorial policy</a></li>
+      <li><a href="{{ '/corrections/' | relative_url }}">Corrections</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li></ul></nav>
+    <nav aria-label="Legal"><h2 class="label">Legal</h2><ul>
+      <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy policy</a></li>
+      <li><a href="{{ '/terms/' | relative_url }}">Terms of use</a></li>
+      <li><a href="{{ '/disclaimer/' | relative_url }}">Disclaimer</a></li>
+      <li><a href="{{ '/advertising-disclosure/' | relative_url }}">Advertising disclosure</a></li></ul></nav>
+  </div>
+  <div class="container footer-base">
+    <p class="muted">General educational information only — not legal, tax or investment advice. © {{ site.time | date: "%Y" }} Aaditya Properties.</p>
+  </div>
+</footer>

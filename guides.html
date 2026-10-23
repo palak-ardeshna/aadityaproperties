@@ -1,11 +1,21 @@
 ---
-title: All guides
-description: Every Aaditya Properties guide, newest first.
+layout: default
+title: All articles
+description: Every Aaditya Properties guide, grouped by section.
 permalink: /guides/
 ---
-<h1>All guides</h1>
-{% assign cats = site.posts | group_by: "category" %}
-{% for c in cats %}
-<h2>{{ c.name }}</h2>
-<ul class="cards">{% for post in c.items %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>{{ post.description }}</li>{% endfor %}</ul>
-{% endfor %}
+<div class="container">
+  <header class="section-header">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">All articles</span></nav>
+    <h1>All articles</h1>
+  </header>
+  {%- for c in site.data.categories -%}
+  {%- assign posts = site.posts | where: "section", c.slug -%}
+  {%- if posts.size > 0 %}
+  <section class="home-block">
+    <h2 class="section-title"><a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}" style="text-decoration:none">{{ c.name }}</a></h2>
+    <div class="story-list">{% for post in posts %}{% include story.html post=post size="list" %}{% endfor %}</div>
+  </section>
+  {%- endif -%}
+  {%- endfor %}
+</div>

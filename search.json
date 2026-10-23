@@ -1,0 +1,5 @@
+---
+layout: null
+sitemap: false
+---
+[{% for p in site.posts %}{% assign c = site.data.categories | where: "slug", p.section | first %}{"title":{{ p.title | jsonify }},"url":{{ p.url | relative_url | jsonify }},"description":{{ p.description | jsonify }},"section":{{ c.name | jsonify }},"date":{{ p.date | date: "%-d %b %Y" | jsonify }},"text":{{ p.content | strip_html | normalize_whitespace | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]

@@ -1,12 +1,21 @@
 ---
 title: "How to Buy Your First Home in Gujarat: A Step-by-Step Guide"
 description: The order of steps for a first home purchase in Gujarat, covering budget, loan limits, legal checks, stamp duty, TDS and registration, with official sources.
-category: Buying & Selling
+section: property-buying-selling
+featured: true
+toc: true
 jurisdiction: Gujarat, India
 summary: "Fix a budget that covers stamp duty, registration and other costs on top of the price. Check how much a bank can lend under RBI's loan-to-value limits. Verify the property's documents and, for new projects, its GujRERA registration before paying a token. Sign a written agreement, deduct 1% TDS if the price is ₹50 lakh or more, and register the sale deed at the sub-registrar office."
 ---
 
 This guide walks through a first home purchase in Gujarat in the order things usually happen. Each step links to the official source, so you can confirm current rules.
+
+<nav class="toc" markdown="1" aria-label="On this page">
+**On this page**
+
+* toc
+{:toc}
+</nav>
 
 ## Step 1: Work out the full budget, not just the price
 

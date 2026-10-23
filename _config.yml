@@ -21,12 +21,14 @@ adsense_client: ca-pub-6821460891701727
 permalink: /:title/
 plugins:
   - jekyll-sitemap
-  - jekyll-seo-tag
+
+kramdown:
+  toc_levels: 2..2
 
 defaults:
   - scope: { path: "", type: posts }
-    values: { layout: post, author: Aaditya Properties Editorial Desk }
+    values: { layout: post, author: editorial-desk }
   - scope: { path: "" }
-    values: { layout: default }
+    values: { layout: page }
 
 exclude: [README.md, deploy.sh]

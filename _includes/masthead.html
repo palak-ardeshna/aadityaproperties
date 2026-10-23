@@ -1,0 +1,15 @@
+<header class="masthead">
+  <div class="container masthead-top">
+    <a class="wordmark" href="{{ '/' | relative_url }}">Aaditya Properties</a>
+    <form class="search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+      <label for="q-top" class="visually-hidden">Search articles</label>
+      <input id="q-top" name="q" type="search" placeholder="Search" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Sections (mobile)"><ul>{% include nav-links.html %}<li><a href="{{ '/search/' | relative_url }}">Search</a></li></ul></nav>
+    </details>
+  </div>
+  <nav class="container primary-nav" aria-label="Sections"><ul>{% include nav-links.html %}</ul></nav>
+</header>
