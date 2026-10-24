@@ -15,3 +15,10 @@ RewriteRule ^(list-layout|grid-layout|map-view|search-results|sign-up|log-in|res
 RewriteRule ^(wp-sitemap.*\.xml|feed/?|comments/feed/?|xmlrpc\.php|wp-login\.php|wp-admin.*)$ - [G,L]
 
 ErrorDocument 404 /404.html
+
+# HTML must be rechecked on every visit so a deploy shows up immediately
+<IfModule mod_headers.c>
+<FilesMatch "\.html$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>
