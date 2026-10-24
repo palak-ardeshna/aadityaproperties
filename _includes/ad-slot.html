@@ -1,0 +1,4 @@
+{%- comment -%} Renders an ad box only when its include in _includes/ads/ holds code, so empty slots leave no gap. {%- endcomment -%}
+{%- capture ad %}{% include ads/{{ include.name }}.html %}{% endcapture -%}
+{%- assign ad = ad | strip -%}
+{%- if ad != "" and page.ads != false %}<div class="code-block code-block-{{ include.name }}">{{ ad }}</div>{% endif -%}

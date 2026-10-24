@@ -2,29 +2,28 @@
 layout: default
 ---
 {%- assign c = site.data.categories | where: "slug", page.section | first -%}
-<div class="container">
-<article class="article">
-  <header class="article-header">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> <span aria-hidden="true">/</span> <a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a></nav>
-    {% include section-label.html slug=page.section %}
-    <h1>{{ page.title }}</h1>
-    <p class="dek">{{ page.description }}</p>
-    {% include byline.html %}
-  </header>
-  {%- if page.image %}<figure class="hero"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="1200" height="675">{% if page.image_credit %}<figcaption>{{ page.image_credit }}</figcaption>{% endif %}</figure>{% endif %}
-  <div class="prose">
-    {%- if page.summary %}<section class="in-brief" aria-label="In brief"><h2 class="label">In brief</h2><p>{{ page.summary }}</p></section>{% endif %}
-    {{ content }}
-    <aside class="disclosure"><p>This article is general educational information about {{ page.jurisdiction }} as of {{ page.last_modified_at | default: page.date | date: "%B %Y" }}. It is not legal, tax or investment advice. Rules and portals change; confirm with the official source or a qualified professional before acting. Found an error? <a href="{{ '/corrections/' | relative_url }}">Tell us</a>.</p></aside>
+{%- capture ad %}</p>{% include ad-slot.html name="in-content" %}{% endcapture -%}
+<article class="post">
+  <div class="inside-article">
+    {%- if page.image %}<div class="featured-image"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt }}" width="1200" height="675"></div>{% endif %}
+    <header class="entry-header">
+      <h1 class="entry-title">{{ page.title }}</h1>
+      {% include entry-meta.html %}
+    </header>
+    <div class="entry-content">
+      {%- if page.summary %}<section class="in-brief" aria-label="In brief"><h2>In brief</h2><p>{{ page.summary }}</p></section>{% endif %}
+      {{ content | replace_first: '</p>', ad }}
+      <aside class="disclosure"><p>This article is general educational information about {{ page.jurisdiction }} as of {{ page.last_modified_at | default: page.date | date: "%B %Y" }}. It is not legal, tax or investment advice. Rules and portals change; confirm with the official source or a qualified professional before acting. Found an error? <a href="{{ '/corrections/' | relative_url }}">Tell us</a>.</p></aside>
+    </div>
+    <footer class="entry-meta">
+      {% include cat-links.html slug=page.section %}
+      <nav class="post-navigation" aria-label="Posts">
+        {%- if page.previous %}<div class="nav-previous">&larr; <a href="{{ page.previous.url | relative_url }}" rel="prev">{{ page.previous.title }}</a></div>{% endif %}
+        {%- if page.next %}<div class="nav-next"><a href="{{ page.next.url | relative_url }}" rel="next">{{ page.next.title }}</a> &rarr;</div>{% endif %}
+      </nav>
+    </footer>
   </div>
 </article>
-{%- assign related = site.posts | where: "section", page.section | where_exp: "p", "p.url != page.url" -%}
-{%- if related.size == 0 %}{% assign related = site.posts | where_exp: "p", "p.url != page.url" %}{% endif %}
-<section class="related" aria-labelledby="related-h">
-  <h2 id="related-h" class="section-title">Related reading</h2>
-  <div class="related-grid">{% for post in related limit:3 %}{% include story.html post=post size="compact" %}{% endfor %}</div>
-</section>
-</div>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Home","item":"{{ '/' | absolute_url }}"},

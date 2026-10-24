@@ -1,5 +1,0 @@
-{%- for c in site.data.categories -%}
-{%- assign n = site.posts | where: "section", c.slug | size -%}
-{%- if n > 0 %}<li><a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}"{% if page.section == c.slug or page.slug_cat == c.slug %} aria-current="page"{% endif %}>{{ c.nav }}</a></li>{% endif -%}
-{%- endfor %}
-<li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a></li>

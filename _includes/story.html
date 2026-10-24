@@ -1,9 +1,0 @@
-{%- assign s = include.post -%}
-<article class="story story--{{ include.size | default: 'list' }}">
-  {%- if s.image %}<a class="thumb" href="{{ s.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ s.image | relative_url }}" alt="" loading="lazy" width="1200" height="675"></a>{% endif %}
-  {% include section-label.html slug=s.section %}
-  <h{{ include.level | default: 3 }} class="headline"><a href="{{ s.url | relative_url }}">{{ s.title }}</a></h{{ include.level | default: 3 }}>
-  {%- if include.size != 'compact' %}<p class="dek">{{ s.description }}</p>{% endif %}
-  {% include byline.html post=s %}
-  {%- if include.size == 'lead' and s.summary %}<p class="brief"><span class="label">In brief</span><br>{{ s.summary }}</p>{% endif %}
-</article>

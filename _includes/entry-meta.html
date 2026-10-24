@@ -1,0 +1,8 @@
+{%- assign p = include.post | default: page -%}
+{%- assign a = site.data.authors[p.author] -%}
+<div class="entry-meta">
+  <span class="posted-on"><time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%B %-d, %Y" }}</time>
+  {%- if p.last_modified_at %} (updated <time datetime="{{ p.last_modified_at | date_to_xmlschema }}">{{ p.last_modified_at | date: "%B %-d, %Y" }}</time>){% endif %}</span>
+  <span class="byline">by <a href="{{ a.url | relative_url }}">{{ a.name }}</a>
+  {%- if p.reviewer %}{% assign r = site.data.authors[p.reviewer] %}, reviewed by <a href="{{ r.url | relative_url }}">{{ r.name }}</a>{% endif %}</span>
+</div>

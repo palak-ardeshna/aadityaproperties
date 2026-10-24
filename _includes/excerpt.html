@@ -1,0 +1,12 @@
+{%- assign s = include.post -%}
+<article class="post">
+  <div class="inside-article">
+    <header class="entry-header">
+      <h2 class="entry-title"><a href="{{ s.url | relative_url }}" rel="bookmark">{{ s.title }}</a></h2>
+      {% include entry-meta.html post=s %}
+    </header>
+    {%- if s.image %}<div class="post-image"><a href="{{ s.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ s.image | relative_url }}" alt="" loading="lazy" width="1200" height="675"></a></div>{% endif %}
+    <div class="entry-summary"><p>{{ s.summary | default: s.description }} <a class="read-more" href="{{ s.url | relative_url }}" aria-label="Read more about {{ s.title | escape }}">Read more</a></p></div>
+    <footer class="entry-meta">{% include cat-links.html slug=s.section %}</footer>
+  </div>
+</article>

@@ -1,0 +1,20 @@
+<div class="widget-area sidebar" id="right-sidebar">
+  <aside class="widget">
+    <form class="search-form" action="{{ '/search/' | relative_url }}" method="get" role="search">
+      <label for="q-side" class="widget-title">Search</label>
+      <div class="search-inside"><input id="q-side" name="q" type="search" required><button type="submit">Search</button></div>
+    </form>
+  </aside>
+  <aside class="widget">
+    <h2 class="widget-title">Recent Posts</h2>
+    <ul>{% for post in site.posts limit:5 %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
+  </aside>
+  <aside class="widget">
+    <h2 class="widget-title">Categories</h2>
+    <ul>
+    {%- for c in site.data.categories -%}{%- assign n = site.posts | where: "section", c.slug | size -%}
+    {%- if n > 0 %}<li><a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}">{{ c.name }}</a></li>{% endif -%}
+    {%- endfor %}
+    </ul>
+  </aside>
+</div>

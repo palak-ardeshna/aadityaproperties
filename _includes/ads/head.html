@@ -1,0 +1,8 @@
+{%- comment -%}
+Ad slot: <head>. Paste page-level ad scripts here — e.g. the GPT loader and the
+INTERSTITIAL, BOTTOM_ANCHOR (TOP_ANCAR) and REWARDED out-of-page slots, or AdSense
+Auto ads. Out-of-page formats need no reserved space. The rewarded modal markup
+goes in ads/body-end.html.
+{%- endcomment -%}
+{%- if site.adsense_client %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}" crossorigin="anonymous"></script>{% endif %}

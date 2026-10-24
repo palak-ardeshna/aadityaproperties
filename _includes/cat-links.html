@@ -1,0 +1,2 @@
+{%- assign c = site.data.categories | where: "slug", include.slug | first -%}
+{%- if c %}<span class="cat-links">Categories: <a href="{{ '/category/' | append: c.slug | append: '/' | relative_url }}" rel="category tag">{{ c.name }}</a></span>{% endif -%}

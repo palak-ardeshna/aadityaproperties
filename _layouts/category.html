@@ -3,17 +3,11 @@ layout: default
 ---
 {%- assign c = site.data.categories | where: "slug", page.slug_cat | first -%}
 {%- assign posts = site.posts | where: "section", c.slug -%}
-<div class="container">
-  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="{{ '/' | relative_url }}">Home</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ c.name }}</span></nav>
-  <header class="section-header">
-    <p class="label">Section</p>
-    <h1>{{ c.name }}</h1>
-    <p class="dek">{{ c.description }}</p>
-  </header>
-  <div class="story-list">
-  {% for post in posts %}{% include story.html post=post size="list" level=2 %}{% endfor %}
-  </div>
-</div>
+<header class="page-header">
+  <h1 class="page-title">{{ c.name }}</h1>
+  <div class="taxonomy-description"><p>{{ c.description }}</p></div>
+</header>
+{% for post in posts %}{% include excerpt.html post=post %}{% endfor %}
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Home","item":"{{ '/' | absolute_url }}"},

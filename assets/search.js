@@ -19,7 +19,7 @@
     })
     .filter(Boolean).sort((a, b) => b.score - a.score);
   status.textContent = hits.length ? `${hits.length} result${hits.length > 1 ? 's' : ''} for “${q}”` : `No results for “${q}”.`;
-  out.innerHTML = hits.map(({ d }) => `<article class="story story--list"><p class="label">${esc(d.section || '')}</p>
-    <h2 class="headline"><a href="${esc(d.url)}">${esc(d.title)}</a></h2><p class="dek">${esc(d.description)}</p>
-    <p class="byline">${esc(d.date)}</p></article>`).join('');
+  out.innerHTML = hits.map(({ d }) => `<article class="post"><div class="inside-article">
+    <h2 class="entry-title"><a href="${esc(d.url)}">${esc(d.title)}</a></h2>
+    <div class="entry-meta">${esc(d.date)}</div><p>${esc(d.description)}</p></div></article>`).join('');
 })();
