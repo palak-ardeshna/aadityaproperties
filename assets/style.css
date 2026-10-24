@@ -99,3 +99,6 @@ footer.entry-meta{margin-top:2em}
 }
 .search-page .search-form{display:flex;gap:4px;margin:1em 0}
 @media print{.site-header,.sidebar,.site-footer,.code-block{display:none}}
+
+.calc label { display: block; margin: 0 0 12px; font-weight: 600; }
+.calc input { display: block; width: 100%; max-width: 320px; padding: 8px; margin-top: 4px; font: inherit; }

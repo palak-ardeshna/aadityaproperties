@@ -6,6 +6,10 @@
     </form>
   </aside>
   <aside class="widget">
+    <h2 class="widget-title">Tools</h2>
+    <ul><li><a href="{{ '/tools/rental-yield/' | relative_url }}">Rental yield calculator</a></li></ul>
+  </aside>
+  <aside class="widget">
     <h2 class="widget-title">Recent Posts</h2>
     <ul>{% for post in site.posts limit:5 %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}</ul>
   </aside>
