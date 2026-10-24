@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Yield Calculator | Aaditya Properties</title>
+<meta name="description" content="Work out the gross and net rental yield of a flat or shop in India from its price, monthly rent and yearly costs.">
+<link rel="canonical" href="https://aadityaproperties.in/tools/rental-yield/">
+<meta property="og:site_name" content="Aaditya Properties">
+<meta property="og:title" content="Rental Yield Calculator">
+<meta property="og:description" content="Work out the gross and net rental yield of a flat or shop in India from its price, monthly rent and yearly costs.">
+<meta property="og:url" content="https://aadityaproperties.in/tools/rental-yield/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/assets/style.css?v=1792846095">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6821460891701727" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="inside-header container">
+    <p class="main-title"><a href="/" rel="home">Aaditya Properties</a></p>
+    <nav class="main-navigation" aria-label="Primary"><ul>
+      <li><a href="/tools/rental-yield/" aria-current="page">Rental Yield Calculator</a></li>
+      <li><a href="/about/">About Us</a></li>
+      <li><a href="/contact/">Contact Us</a></li>
+      <li><a href="/privacy-policy/">Privacy Policy</a></li>
+      <li><a href="/disclaimer/">Disclaimer</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<div class="site container" id="page">
+  <div class="site-content" id="content">
+    <div class="content-area">
+      <main class="site-main" id="main">
+        
+        <article class="page">
+  <div class="inside-article entry-content">
+<h1 id="rental-yield-calculator">Rental yield calculator</h1>
+
+<p>Enter the price you pay, the rent you expect and what the property costs you each year. Everything is in ₹.</p>
+
+<form id="ry" class="calc" oninput="ryCalc()">
+  <label>Purchase price incl. stamp duty and registration (₹) <input type="number" name="price" min="0" value="5000000" /></label>
+  <label>Monthly rent (₹) <input type="number" name="rent" min="0" value="15000" /></label>
+  <label>Yearly costs: maintenance, property tax, repairs (₹) <input type="number" name="costs" min="0" value="24000" /></label>
+  <label>Months empty per year <input type="number" name="vacant" min="0" max="12" value="1" /></label>
+  <p aria-live="polite"><strong>Gross yield: <span id="ry-gross"></span></strong><br /><strong>Net yield: <span id="ry-net"></span></strong></p>
+</form>
+
+<script>
+function ryCalc() {
+  var f = document.getElementById("ry").elements;
+  var price = +f.price.value || 0, rent = +f.rent.value || 0, costs = +f.costs.value || 0;
+  var vacant = Math.min(12, Math.max(0, +f.vacant.value || 0));
+  var pct = function (x) { return price > 0 ? (x / price * 100).toFixed(2) + "%" : "–"; };
+  document.getElementById("ry-gross").textContent = pct(rent * 12);
+  document.getElementById("ry-net").textContent = pct(rent * (12 - vacant) - costs);
+}
+ryCalc();
+</script>
+
+<h2 id="how-it-is-worked-out">How it is worked out</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Figure</th>
+      <th>Formula</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gross yield</td>
+      <td>monthly rent × 12 ÷ purchase price × 100</td>
+    </tr>
+    <tr>
+      <td>Net yield</td>
+      <td>(monthly rent × (12 − empty months) − yearly costs) ÷ purchase price × 100</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example with the default numbers:</strong> ₹15,000 × 12 = ₹1,80,000 a year, so the gross yield on ₹50,00,000 is 3.60%. With one empty month and ₹24,000 of costs, you keep ₹1,41,000, a net yield of 2.82%.</p>
+
+<h2 id="what-it-leaves-out">What it leaves out</h2>
+<ul>
+  <li>Income tax on the rent.</li>
+  <li>Home-loan interest, and any rise or fall in the property’s price.</li>
+  <li>Brokerage and the cost of finding a tenant.</li>
+</ul>
+
+<p>This is a rough check, not investment advice.</p>
+
+  </div>
+</article>
+
+      </main>
+    </div>
+    <div class="widget-area sidebar" id="right-sidebar">
+  <aside class="widget">
+    <form class="search-form" action="/search/" method="get" role="search">
+      <label for="q-side" class="widget-title">Search</label>
+      <div class="search-inside"><input id="q-side" name="q" type="search" required><button type="submit">Search</button></div>
+    </form>
+  </aside>
+  <aside class="widget">
+    <h2 class="widget-title">Tools</h2>
+    <ul><li><a href="/tools/rental-yield/">Rental yield calculator</a></li></ul>
+  </aside>
+  <aside class="widget">
+    <h2 class="widget-title">Recent Posts</h2>
+    <ul><li><a href="/top-real-estate-investment-tips-for-beginners/">Property Investment for Beginners: 8 Questions to Answer Before You Buy</a></li><li><a href="/residential-vs-commercial-property-investment/">Residential vs Commercial Property: How the Risks and Costs Differ</a></li><li><a href="/how-to-buy-your-first-home-in-india/">How to Buy Your First Home in Gujarat: A Step-by-Step Guide</a></li><li><a href="/documents-required-before-buying-a-property/">Documents to Check Before Buying Property in Gujarat: A Practical Checklist</a></li></ul>
+  </aside>
+  <aside class="widget">
+    <h2 class="widget-title">Categories</h2>
+    <ul><li><a href="/category/property-buying-selling/">Property Buying & Selling</a></li><li><a href="/category/property-investment/">Property Investment</a></li>
+    </ul>
+  </aside>
+</div>
+
+  </div>
+</div>
+<div class="site-footer">
+  <footer class="site-info container">
+    <span class="copyright">&copy; 2026 Aaditya Properties</span>
+    &bull; <a href="/terms/">Terms</a>
+    &bull; <a href="/editorial-policy/">Editorial policy</a>
+    &bull; <a href="/corrections/">Corrections</a>
+    &bull; <a href="/advertising-disclosure/">Advertising disclosure</a>
+  </footer>
+</div>
+
+</body>
+</html>
